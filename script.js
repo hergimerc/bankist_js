@@ -311,6 +311,7 @@ const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
 */
 
+/*
 console.log(movements);
 
 // EQUALITY
@@ -325,3 +326,23 @@ console.log(anyDeposits);
 // EVERY
 console.log(movements.every(mov => mov > 0));
 console.log(account4.movements.every(mov => mov > 0));
+*/
+
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arr.flat());
+
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat(2));
+
+// flat
+const overallBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);
+
+// flatMap
+const overallBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance2);
